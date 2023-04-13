@@ -1,4 +1,5 @@
-#!/bin/python3
+#!/usr/bin/python3
+
 """
 This git hook checks the commit message for compliance with the `Conventional Commits` format.
 See https://www.conventionalcommits.org
