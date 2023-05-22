@@ -5,7 +5,6 @@ This git hook checks the commit message for compliance with the `Conventional Co
 See https://www.conventionalcommits.org
 """
 
-
 import re
 import sys
 
@@ -103,13 +102,13 @@ def _r_description() -> str:
     return r" .+"
 
 
-if __name__ == "__main__":
+def validate_commit_message():
     commit_message_filepath = sys.argv[1]
     with open(commit_message_filepath, mode="r", encoding="utf-8") as file:
         commit_message_ = file.read()
 
     if is_conventional(commit_message=commit_message_):
-        exit(Result.SUCCESS)
+        sys.exit(Result.SUCCESS)
 
     commit_message_with_tabs = "".join(f"\t{line}\n" for line in commit_message_.split("\n")).rstrip()
     print(
@@ -138,4 +137,8 @@ if __name__ == "__main__":
         f"{Color.GREEN}\tTornado probe handlers must be tested with `http_server_client` (integration tests).{Color.RESTORE}\n"
         f"{Color.GREEN}\tThe `start_probe_server` needs just unit tests.{Color.RESTORE}\n"
     )
-    exit(Result.FAIL)
+    sys.exit(Result.FAIL)
+
+
+if __name__ == "__main__":
+    validate_commit_message()
