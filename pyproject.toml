@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "edgecentercloud-git-hooks"
-version = "0.0.1"
+version = "0.0.6"
 description = ""
 authors = ["Artem Pelevin <artem.pelevin@edgecenter.ru>"]
 readme = "README.md"
