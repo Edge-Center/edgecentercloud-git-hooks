@@ -4,7 +4,9 @@ version = "0.0.1"
 description = ""
 authors = ["Artem Pelevin <artem.pelevin@edgecenter.ru>"]
 readme = "README.md"
-packages = [{include = "edgecentercloud_git_hooks"}]
+packages = [
+    {include = "hooks"}
+]
 
 
 [tool.poetry.dependencies]
