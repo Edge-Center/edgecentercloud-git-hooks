@@ -18,6 +18,10 @@ black = "^23.3.0"
 pytest = "^7.3.0"
 
 
+[tool.poetry.scripts]
+edgecenter-cloud-conventional-commit = "hooks.commit_msg:validate_commit_message"
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
