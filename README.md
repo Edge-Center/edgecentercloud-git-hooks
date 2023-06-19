@@ -1,4 +1,4 @@
-# edgecentercloud-git-hooks
+# EdgeCenter Cloud Git hooks
 
 ### 1. `commit-msg` hook
 
@@ -10,12 +10,36 @@ format _(see  https://www.conventionalcommits.org)_
 
 #### How to implement it into your project?
 
-In your project directory run this commands:
+Install `pre-commit` tools:
 
 ```shell
-wget -q https://raw.githubusercontent.com/Edge-Center/edgecentercloud-git-hooks/main/hooks/commit_msg.py -O commit-msg
-chmod +x commit-msg
-mv commit-msg .git/hooks
+pip install pre-commit
 ```
 
-**P.S:** You can insert this commands into your project `Makefile`. For example in the `init_git_hooks` section
+Create (if it doesn't exist) a `.pre-commit-config.yaml` file in the root of the project:
+
+```shell
+touch .pre-commit-config.yaml
+```
+
+Add this content to the created file:
+
+```shell
+  - repo: https://github.com/Edge-Center/edgecentercloud-git-hooks
+    rev: v0.0.6
+    hooks:
+      - id: edgecenter-cloud-conventional-commit
+        name: EdgeCenter Cloud Conventional Commit
+        entry: edgecenter-cloud-conventional-commit
+        language: python
+        always_run: true
+        stages: [ commit-msg ]
+```
+
+Install hook using this command:
+
+```shell
+pre-commit install --install-hooks
+```
+
+Complete!
