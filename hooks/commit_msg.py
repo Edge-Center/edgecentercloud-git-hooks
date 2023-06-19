@@ -37,7 +37,6 @@ def is_conventional(commit_message: str) -> bool:
     """
     Checked that the commit message matches `Conventional Commits` formatting.
     See https://www.conventionalcommits.org
-    See https://wiki.yandex.ru/development/cloud/baza-znanijj-27-3/rabota-nad-produktami/soglashenie-o-kommitax
 
     :param commit_message: Message that will be checked.
     :return: True, if input matches Conventional Commits formatting, else False.
@@ -116,7 +115,6 @@ def validate_commit_message():
         f"{Color.RED}{commit_message_with_tabs}{Color.RESTORE}\n"
         f"Your commit message does not follow `Conventional Commits` formatting:\n"
         f"\tSee {Color.BLUE}https://www.conventionalcommits.org/{Color.RESTORE}\n"
-        f"\tSee {Color.BLUE}https://wiki.yandex.ru/development/cloud/baza-znanijj-27-3/rabota-nad-produktami/soglashenie-o-kommitax/{Color.RESTORE}\n"
         f"ㅤ\n"
         f"Edge Center conventional template:\n"
         f"{Color.YELLOW}\t<type>(<task_tag>): <description>{Color.RESTORE}\n"
