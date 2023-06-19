@@ -1,0 +1,7 @@
+- id: edgecenter-cloud-conventional-commit
+  name: EdgeCenter Cloud Cloud Conventional Commit
+  entry: commit_msg
+  language: python
+  description: Checks commit message for EdgeCenter Cloud Conventional Commits formatting
+  always_run: true
+  stages: [ commit-msg ]
